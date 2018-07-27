@@ -43,7 +43,7 @@ const bankLineSimulator = bankCustomers => {
       bankCustomers.enqueue(derp);
       console.log(
         derp,
-        'messed up his paperwork and had to get back in line... what a derp!'
+        'messed up their paperwork and had to get back in line... what a derp!'
       );
     } else {
       let goodBanker = bankCustomers.dequeue();

@@ -4,6 +4,7 @@ const Stack = require('./stack');
 const Queue = require('./queue');
 
 /////// STACK
+
 const peek = stack => {
   let inputStack = new Stack();
   inputStack = stack;
@@ -77,7 +78,6 @@ const removeQ = (queue, item) => {
       exportQueue.enqueue(tempItem);
     }
   }
-
   return exportQueue;
 };
 
