@@ -23,8 +23,4 @@ class Stack {
   }
 }
 
-const peek = Stack => {
-  return Stack.top.data;
-};
-
-(module.exports = Stack), peek;
+module.exports = Stack;
