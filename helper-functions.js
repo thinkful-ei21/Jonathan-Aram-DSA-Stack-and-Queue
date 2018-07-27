@@ -1,7 +1,9 @@
 'use strict';
 
 const Stack = require('./stack');
+const Queue = require('./queue');
 
+/////// STACK
 const peek = stack => {
   let inputStack = new Stack();
   inputStack = stack;
@@ -39,4 +41,44 @@ const remove = (stack, item) => {
   return exportStack;
 };
 
-module.exports = { display, peek, remove };
+/////// QUEUE
+
+const peekQ = queue => {
+  let inputQueue = new Queue();
+  inputQueue = queue;
+  if (inputQueue.first === null) {
+    return '';
+  }
+  return inputQueue.first.value;
+};
+
+const displayQ = queue => {
+  let inputQueue = new Queue();
+  inputQueue = queue;
+  if (inputQueue.first === null) {
+    return '';
+  }
+
+  console.log(inputQueue.dequeue());
+  displayQ(inputQueue);
+  return '';
+};
+
+const removeQ = (queue, item) => {
+  let importQueue = new Queue();
+  let exportQueue = new Queue();
+  importQueue = queue;
+  if (importQueue.first === null) {
+    return '';
+  }
+  while (importQueue.first !== null) {
+    let tempItem = importQueue.dequeue();
+    if (tempItem !== item) {
+      exportQueue.enqueue(tempItem);
+    }
+  }
+
+  return exportQueue;
+};
+
+module.exports = { display, peek, remove, displayQ, peekQ, removeQ };
